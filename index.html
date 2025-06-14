@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Für Alita</title>
+    <style>
+        /* General styling for the body to center the content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Light grey background */
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* The container for the heart and text */
+        .heart-container {
+            position: relative;
+            text-align: center;
+        }
+
+        /* The heart shape created with CSS - Made even bigger */
+        .heart {
+            position: relative;
+            width: 400px; /* Increased from 300px */
+            height: 360px; /* Increased from 270px */
+            /* Animation for a subtle beating effect */
+            animation: beat 1.5s infinite;
+        }
+
+        /* Using pseudo-elements to create the two lobes of the heart - Made bigger */
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 200px; /* Increased from 150px */
+            height: 320px; /* Increased from 240px */
+            background-color: #e53e3e; /* A nice shade of red */
+            border-radius: 100px 100px 0 0;
+        }
+
+        /* Positioning the left lobe */
+        .heart::before {
+            left: 200px; /* Increased from 150px */
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        /* Positioning the right lobe */
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        /* The text inside the heart - Font size increased */
+        .heart-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* The vertical translate is adjusted to move the text up */
+            transform: translate(-50%, calc(-50% - 60px));
+            color: white;
+            font-size: 48px; /* Increased from 36px */
+            font-weight: bold;
+            white-space: nowrap; /* Prevents the text from breaking into two lines */
+            z-index: 1; /* Ensures the text is on top of the heart shape */
+        }
+
+        /* Keyframe animation for the beating effect */
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-container">
+        <!-- The text to be displayed -->
+        <div class="heart-text">My love Alita</div>
+        <!-- The heart shape -->
+        <div class="heart"></div>
+    </div>
+
+</body>
+</html>
 
